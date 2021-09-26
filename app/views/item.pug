@@ -1,0 +1,56 @@
+table Search Result
+      tr
+        th Title
+        th Brand
+        th price
+        th stock
+        th img
+        th
+        th seller's name
+        th  
+      each p in phone 
+        tr
+         th #{p.title}
+         th #{p.brand}
+         th $#{p.price}
+         th #{p.stock}
+         th
+          - var brand =  p.brand
+            img(src = "/images/"+brand+".jpeg")
+         th
+         th #{p.seller}
+        
+         if p.reviews[0] != null
+            tr
+              th review 1 
+              th reviewer:
+              th #{p.reviews[0].reviewer}
+              th
+              th rating:
+              th #{p.reviews[0].rating}
+              th comment:
+              th #{p.reviews[0].comment}
+
+         if p.reviews[1] != null
+            tr
+                th review 2  
+                th reviewer:
+                th #{p.reviews[1].reviewer}
+                th
+                th rating:
+                th #{p.reviews[1].rating}
+                th comment:
+                th #{p.reviews[1].comment}
+
+         if p.reviews[2] != null
+            tr
+                th review 3 
+                th reviewer:
+                th #{p.reviews[2].reviewer}
+                th
+                th rating:
+                th #{p.reviews[2].rating}
+                th comment:
+                th #{p.reviews[2].comment}
+
+        

@@ -1,0 +1,24 @@
+extends layout 
+
+block content
+  head 
+    title Login/ Sign Up Page
+    script(src="https://code.jquery.com/jquery-3.2.1.js")
+    script(src='/javascripts/login.js')
+
+
+  body
+    h2 Login Page   
+    div#UserBox
+      label Username:
+      input#email(type="text")
+      |
+      br 
+      label Password:
+      input#password(type="password")
+      |
+      br
+      button#login Sign in
+      |
+      br
+      button#SignUp Sign up

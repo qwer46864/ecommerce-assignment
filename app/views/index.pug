@@ -1,0 +1,71 @@
+extends layout
+
+block content
+  script(src='/js/index.js')
+  script(src='/js/item.js')
+  div(id = "topbar")
+    div(id="topleft") 
+      select(id="selbrand" onchange="Search()" autocomplete="off")
+        option(value="") all brand 
+        each brand in brands
+          option(value=brand) #{brand}
+      div(id="rangebox")
+        input(type="range" id="showprice"  autocomplete="off" value="8000" max="8000" min="0" onchange="changPrice(event)")
+        div(id="showpricetext") Price Range Filter
+      input(type="text" id="searchArea"  autocomplete="off")
+      |
+      input(type = "submit" onclick = "Search()" value = "Search")
+    div(id = "topright")
+      p Welcome #{username}
+      |
+      button#user(type = 'button') profile
+      |
+      button#sign(type = 'button') Sign in
+      |
+      button#signout Sign Out
+      |
+      input(type = "button" onclick = "checkout()"  value = "Check Out")
+  h1= 'PhoneZone'
+  div(id = "soldOutSoon", class="maintable")
+    table#item Sold out Soon
+      tr
+        th Title
+        th Brand
+        th price
+        th stock
+        th img
+        th
+
+      each p in phone 
+        tr
+         th #{p.title}
+         th #{p.brand}
+         th $#{p.price}
+         th #{p.stock}
+         th 
+          - var brand =  p.brand
+            img(src = "/images/"+brand+".jpeg")
+          th 
+            button(type='button') More detail
+
+    table Best Seller
+      tr
+        th Title
+        th Brand
+        th AvgRating
+        th Img
+        th
+      each a in avgrating
+        tr 
+          th #{a.title}
+          th #{a.brand}
+          th #{a.rating_average}
+          th 
+           - var brand =  a.brand
+             img(src = "/images/"+brand+".jpeg")
+          th 
+            button(type='button') More detail
+          
+
+
+  

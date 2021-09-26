@@ -1,0 +1,75 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background:lightsteelblue;
+}
+div#topbar {
+  margin-right: auto;
+  padding: 1px;
+  border: 10pt;
+}
+div#topright{
+  float:right;
+}
+div#UserBox{
+  width: 382px;  
+  overflow: hidden;  
+  margin: auto;  
+  margin: 20 0 0 450px;  
+  padding: 80px;  
+  background: black;  
+  border-radius: 15px ;
+}
+input {
+  margin :10px
+}
+a {
+  color: #00B7FF;
+}
+table {
+  border: collapse; 
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+table tbody td{
+  border-top: 1pt solid #95BEF0;   
+  border-bottom: 1pt solid #95BEF0; 
+  line-height: 1.5em;
+  vertical-align: middle;
+  
+  
+}
+table thead th {
+  text-align: left;
+  padding: 0.25em 0.75em; 
+}
+table thead {
+  background-color: #0f67aa ;
+}
+table thead tr {
+  background-color: #CACACA ;
+}
+table tbody td:first-child  {
+  text-align: center;
+  padding: 0.5em 0em;   
+}
+
+img{
+  width:10em;
+  height:10em;
+  border-radius: 8px;
+}
+
+input{
+  margin:10px
+}
+
+button{
+  margin:10px
+}
+
+label{
+  color:white;
+}

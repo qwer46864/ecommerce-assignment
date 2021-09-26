@@ -1,0 +1,47 @@
+extends layout
+block content
+  script(src='/js/checkout.js')
+  div(id = "topbar")
+    input(type = "button" value = "Back" onclick="back()")
+    |
+    input(type = "button" value = "Purchase" onclick="purchar()")
+   
+  h1= 'PhoneZone'
+  div(id="soldOutSoon")
+    - var sum =  0
+    - var number = 0
+    table Sold out Soon
+      tr
+        th Title
+        th Stock
+        th price
+        th amount
+        th subtotal
+        th img
+        th operation
+      each p in phone 
+        tr
+         td #{p.title}
+         td #{p.stock}
+         td(class="price") #{p.price}
+         td
+          - var stock =  p.stock
+          - sum = sum + p.price 
+          - number = number + 1
+            input(type = "number" data-stock=stock class="number"  id=p.id  oninput="changNum(event)" value = "1")
+         td $
+          span(class="subtotal") #{p.price}
+         td
+          - var brand =  p.brand
+            img(src = "/images/"+brand+".jpeg")
+         td
+            input(type = "button" value = "Delete" onclick="deleteFun(event)")
+    div Total: $ 
+      span(id="total") #{sum} 
+    div Total amount: 
+      span(id="amount") #{number}
+     
+      
+
+
+  

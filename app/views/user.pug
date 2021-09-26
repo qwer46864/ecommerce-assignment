@@ -1,0 +1,32 @@
+extends layout 
+block content
+  head 
+    title User Page
+    script(src="https://code.jquery.com/jquery-3.2.1.js")
+    script(src='/javascripts/user.js')
+
+  div(id = "topright")
+      button#signout Sign Out
+      input(type="button" value = "edit profile")
+
+  body
+    h2 User Page  
+    div
+        p first name: #{firstname}
+        p last name: #{lastname}
+        p email: #{email}
+
+    div
+    h2 Changing Password
+        p Please type in your current password:
+        input#oldpassword(type = "text")
+        p Please type in your new password:
+        input#newpassword(type = "text")
+
+        p Are you sure you want to change password?
+        button#changepassword Confirm
+
+    div
+    h2 Add a new listing?
+        button
+

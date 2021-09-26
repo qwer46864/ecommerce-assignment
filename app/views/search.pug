@@ -1,0 +1,16 @@
+table Search Result
+      tr
+        th Title
+        th Brand
+        th price
+        th stock
+        th img
+      each p in phone 
+        tr
+         th #{p.title}
+         th #{p.brand}
+         th $#{p.price}
+         th #{p.stock}
+         th
+          - var brand =  p.brand
+            img(src = "/images/"+brand+".jpeg")
